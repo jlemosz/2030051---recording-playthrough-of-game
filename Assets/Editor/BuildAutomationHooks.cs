@@ -8,14 +8,14 @@ public static class BuildAutomationHooks
     private static bool isPlaythroughComplete = false;
 
     // This method is called before the build starts
-    public static void PreExport(UnityEditor.BuildTarget target, string path)
+    public static void PreExport()
     {
         Debug.Log("Build Automation PreExport method called");
         // You can do any pre-build setup here
     }
 
     // This method is called after the build completes
-    public static void PostExport(UnityEditor.BuildTarget target, string path)
+    public static void PostExport(string path)
     {
         Debug.Log("Build Automation PostExport method called. Starting playthrough...");
         
