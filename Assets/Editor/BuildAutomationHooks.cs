@@ -32,8 +32,7 @@ public class BuildAutomationHooks : IPostprocessBuildWithReport
 
     public void OnPostprocessBuild(BuildReport report)
     {
-        if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows64 ||
-            EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows)
+        if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS)
         {
             string buildPath = report.summary.outputPath;
             Debug.Log($"Build completed at: {buildPath}");
