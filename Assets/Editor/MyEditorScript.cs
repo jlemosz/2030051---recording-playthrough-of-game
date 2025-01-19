@@ -17,22 +17,5 @@ class MyEditorScript
         //BuildPipeline.BuildPlayer(buildPlayerOptions);
         
         BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-
-        if (report.summary.result == BuildResult.Succeeded)
-        {
-            Debug.Log("Build succeeded, starting playthrough...");
-            EditorCoroutineUtility.StartCoroutineOwnerless(WaitForPlaythrough());
-        }
-        else
-        {
-            Debug.LogError("Build failed!");
-        }
-        
-    }
-    
-    private static IEnumerator WaitForPlaythrough()
-    {
-        yield return new PostBuildProcessor.WaitForPlaythroughCompletion();
-        Debug.Log("Playthrough and post-processing complete.");
     }
 }

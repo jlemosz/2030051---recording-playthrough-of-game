@@ -19,14 +19,14 @@ public class PlaythroughManager : MonoBehaviour
     private bool LoadPlaythroughConfig()
     {
         string configPath = Path.Combine(Application.dataPath, "..", PLAYTHROUGH_CONFIG_FILE);
-        if (File.Exists(configPath))
-        {
+        //if (File.Exists(configPath))
+        //{
             string configJson = File.ReadAllText(configPath);
             config = JsonUtility.FromJson<PlaythroughConfig>(configJson);
             Debug.Log($"Loaded playthrough config. Duration: {config.Duration} seconds");
             return true;
-        }
-        return false;
+        //}
+        //return false;
     }
 
     private IEnumerator RunPlaythrough()
